@@ -15,11 +15,15 @@ public class PlatformGenerator : MonoBehaviour {
 
     public ObjectPooler theObjectPool;
 
+    public CoinGenerator theCoinGenerator;
+
  
     // Start is called before the first frame update
     void Start()
     {
         platformWidth = thePlatform.GetComponent<BoxCollider2D>().size.x;
+
+        theCoinGenerator = FindObjectOfType<CoinGenerator>();
     }
 
     // Update is called once per frame
@@ -38,8 +42,9 @@ public class PlatformGenerator : MonoBehaviour {
             newPlatform.transform.rotation = transform.rotation;
             newPlatform.SetActive(true);
 
-
-
+            theCoinGenerator.SpawnCoins(new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z));
+            
+            transform.position = new Vector3(transform.position.x + platformWidth + distanceBetween, transform.position.y, transform.position.z);
         }
     }
 }
