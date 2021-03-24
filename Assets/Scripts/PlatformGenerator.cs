@@ -43,8 +43,6 @@ public class PlatformGenerator : MonoBehaviour {
             newPlatform.SetActive(true);
 
             theCoinGenerator.SpawnCoins(new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z));
-            
-            transform.position = new Vector3(transform.position.x + platformWidth + distanceBetween, transform.position.y, transform.position.z);
-        }
+            }
     }
 }
