@@ -123,6 +123,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &12694553
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 12694554}
+  - component: {fileID: 12694555}
+  m_Layer: 8
+  m_Name: Catcher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &12694554
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12694553}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.06, y: -6.95, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1245702478}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &12694555
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12694553}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 43, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &107246328
 GameObject:
   m_ObjectHideFlags: 0
@@ -1155,11 +1212,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1245702475}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.77, y: 0, z: -10}
+  m_LocalPosition: {x: 14.6, y: 7.85, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 107246329}
   - {fileID: 1638359673}
+  - {fileID: 12694554}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1506,9 +1564,14 @@ MonoBehaviour:
     type: 3}
   generationPoint: {fileID: 107246329}
   distanceBetween: 5
-  distanceBetweenMin: 7
-  distanceBetweenMax: 10
-  theObjectPool: {fileID: 254699581}
+  thePlatforms:
+  - {fileID: 2659753220090515865, guid: 0f5743f1562ee464799ff10df4fc4e7d, type: 3}
+  - {fileID: 7816834651412965251, guid: 928db44ae6b5aa544a7608360489f169, type: 3}
+  - {fileID: 8522692351998737867, guid: a6ab5496d056b0b42b7647a10c1b5c57, type: 3}
+  - {fileID: 1116026743583363751, guid: 15070678f1c0f8543a69453d8ea00207, type: 3}
+  - {fileID: 5961661306821287070, guid: 9b67a6e345698cf489aaa19710315042, type: 3}
+  distanceBetweenMin: 1
+  distanceBetweenMax: 5
 --- !u!4 &1744316418
 Transform:
   m_ObjectHideFlags: 0
