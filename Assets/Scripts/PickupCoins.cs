@@ -2,13 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class pickupCoins : MonoBehaviour
+public class PickupCoins : MonoBehaviour
 {
-
     public int scoreToGive;
 
     private ScoreManager theScoreManager;
-    
     // Start is called before the first frame update
     void Start()
     {
