@@ -5,32 +5,33 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     public float moveSpeed;
+    public float speedMultiplier;
+    public float speedIncreaseMilestone;
     public float jumpForce;
     public float jumpTime;
     private float jumpTimeCounter;
+    private float speedMilestoneCount;
     private Rigidbody2D myRigidbody;
-
     public bool grounded; 
     public LayerMask whatIsGround; 
-    
-    private Collider2D myCollider;
-
+    public Transform groundCheck;
+    public float groundCheckRadius;
     private Animator myAnimator;
-
     // Start is called before the first frame update
     void Start() {
         myRigidbody = GetComponent<Rigidbody2D>(); 
-
-        myCollider = GetComponent<Collider2D>();
-
         myAnimator = GetComponent<Animator>();
         jumpTimeCounter = jumpTime;
+        speedMilestoneCount = speedIncreaseMilestone;
     }
-
     // Update is called once per frame
     void Update() {
-
-        grounded = Physics2D.IsTouchingLayers(myCollider, whatIsGround);
+        grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
+        if (transform.position.x > speedMilestoneCount) {
+            speedMilestoneCount += speedIncreaseMilestone;
+            speedIncreaseMilestone = speedIncreaseMilestone * speedMultiplier;
+            moveSpeed = moveSpeed * speedMultiplier;
+        }
 
         myRigidbody.velocity = new Vector2(moveSpeed, myRigidbody.velocity.y);
 
