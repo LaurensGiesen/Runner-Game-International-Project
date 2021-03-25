@@ -5,7 +5,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     public float moveSpeed;
+    private float moveSpeedStore;
+    private float speedMilestoneCountStore;
     public float speedMultiplier;
+    private float speedIncreaseMilestoneStore;
     public float speedIncreaseMilestone;
     public float jumpForce;
     public float jumpTime;
@@ -17,12 +20,16 @@ public class PlayerController : MonoBehaviour {
     public Transform groundCheck;
     public float groundCheckRadius;
     private Animator myAnimator;
+    public GameManager theGameManager;
     // Start is called before the first frame update
     void Start() {
         myRigidbody = GetComponent<Rigidbody2D>(); 
         myAnimator = GetComponent<Animator>();
         jumpTimeCounter = jumpTime;
         speedMilestoneCount = speedIncreaseMilestone;
+        moveSpeedStore = moveSpeed;
+        speedMilestoneCountStore = speedMilestoneCount;
+        speedIncreaseMilestoneStore = speedIncreaseMilestone;
     }
     // Update is called once per frame
     void Update() {
@@ -60,4 +67,12 @@ public class PlayerController : MonoBehaviour {
         myAnimator.SetFloat("Speed", myRigidbody.velocity.x);
         myAnimator.SetBool("Grounded", grounded);
     }
+    void onCollisionEnter2D (Collision2D other) {
+        if (other.gameObject.tag == "killbox") {
+            theGameManager.RestartGame();
+            moveSpeed = moveSpeedStore;
+            speedMilestoneCount = speedMilestoneCountStore;
+            speedIncreaseMilestone = speedIncreaseMilestoneStore;
+        }
+}
 }

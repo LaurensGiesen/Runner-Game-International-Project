@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 12694555}
   m_Layer: 8
   m_Name: Catcher
-  m_TagString: Untagged
+  m_TagString: killbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,7 +148,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 12694553}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.06, y: -6.95, z: 0}
+  m_LocalPosition: {x: -0.06, y: -4.99, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1245702478}
@@ -1138,7 +1138,6 @@ GameObject:
   - component: {fileID: 1131837166}
   - component: {fileID: 1131837167}
   - component: {fileID: 1131837168}
-  - component: {fileID: 1131837169}
   m_Layer: 8
   m_Name: Platform (1)
   m_TagString: Untagged
@@ -1154,7 +1153,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1131837165}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.388788, y: 1.46, z: -104.32612}
+  m_LocalPosition: {x: 10.21, y: 1.4, z: -104.32612}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 699028104}
@@ -1215,19 +1214,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1131837169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1131837165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5e1a76a348d10243a26dd9036e0bfdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platformDestructionPoint: {fileID: 0}
 --- !u!1 &1188320454
 GameObject:
   m_ObjectHideFlags: 0
@@ -1238,7 +1224,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1188320455}
   - component: {fileID: 1188320457}
-  - component: {fileID: 1188320456}
   m_Layer: 8
   m_Name: Platform (2)
   m_TagString: Untagged
@@ -1263,19 +1248,6 @@ Transform:
   m_Father: {fileID: 157595178}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1188320456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1188320454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5e1a76a348d10243a26dd9036e0bfdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platformDestructionPoint: {fileID: 0}
 --- !u!61 &1188320457
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1551,6 +1523,7 @@ MonoBehaviour:
     m_Bits: 256
   groundCheck: {fileID: 2023602662}
   groundCheckRadius: 0.1
+  theGameManager: {fileID: 1546359079}
 --- !u!95 &1260896017
 Animator:
   serializedVersion: 3
@@ -1599,6 +1572,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1744316418}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1546359078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1546359080}
+  - component: {fileID: 1546359079}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1546359079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546359078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e6541ddd98fb704baaad8228e33db84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformGenerator: {fileID: 1744316418}
+  thePlayer: {fileID: 1260896016}
+--- !u!4 &1546359080
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546359078}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.1463363, y: 5.0980945, z: -68.6952}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1570495920
 GameObject:
