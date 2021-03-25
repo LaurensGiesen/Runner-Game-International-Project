@@ -16,6 +16,7 @@ public class PlatformGenerator : MonoBehaviour {
     public ObjectPooler theObjectPool;
 
     public CoinGenerator theCoinGenerator;
+    public float randomCoinThreshold;
 
  
     // Start is called before the first frame update
@@ -41,8 +42,9 @@ public class PlatformGenerator : MonoBehaviour {
             newPlatform.transform.position = transform.position;
             newPlatform.transform.rotation = transform.rotation;
             newPlatform.SetActive(true);
-
-            theCoinGenerator.SpawnCoins(new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z));
+            if(Random.Range(0f, 100f) < randomCoinThreshold) {
+                theCoinGenerator.SpawnCoins(new Vector3(transform.position.x + 1f, transform.position.y + 4f, transform.position.z));
             }
+        }
     }
 }

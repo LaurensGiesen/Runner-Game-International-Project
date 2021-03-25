@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1debc474-010a-4a06-b4e7-8911950ebab9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-    </list>
+    <list default="true" id="1debc474-010a-4a06-b4e7-8911950ebab9" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,12 +28,13 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1c80b99a-309d-4500-8515-f83977ef2be2" name="Default Changelist" comment="" />
+      <changelist id="1debc474-010a-4a06-b4e7-8911950ebab9" name="Default Changelist" comment="" />
       <created>1616590926414</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1616590926414</updated>
       <workItem from="1616590927844" duration="683000" />
+      <workItem from="1616608007829" duration="90000" />
     </task>
     <servers />
   </component>
