@@ -7,22 +7,25 @@ public class PlatformGenerator : MonoBehaviour {
     public GameObject thePlatform;
     public Transform generationPoint;
     public float distanceBetween;
-    private int platformSelector;
+
     private float platformWidth;
+    
     public float distanceBetweenMin;
     public float distanceBetweenMax;
-    public ObjectPooler theObjectPool;
 
-    public CoinGenerator theCoinGenerator;
-    public float randomCoinThreshold;
-
+    private int platformSelector;
     private float[] platformWidths;
+
     public ObjectPooler[] theObjectPools;
+
     private float minHeight;
     public Transform maxHeightPoint;
     private float maxHeight;
     public float maxHeightChange;
     private float heightChange;
+
+    public CoinGenerator theCoinGenerator;
+    public float randomCoinThreshold;
     // Start is called before the first frame update
     void Start() {
        platformWidths = new float[theObjectPools.Length];
@@ -31,6 +34,7 @@ public class PlatformGenerator : MonoBehaviour {
         }
         minHeight = transform.position.y;
         maxHeight = maxHeightPoint.position.y;
+
         theCoinGenerator = FindObjectOfType<CoinGenerator>();
     }
 
@@ -51,8 +55,9 @@ public class PlatformGenerator : MonoBehaviour {
             newPlatform.transform.position = transform.position;
             newPlatform.transform.rotation = transform.rotation;
             newPlatform.SetActive(true);
+
             if(Random.Range(0f, 100f) < randomCoinThreshold) {
-                theCoinGenerator.SpawnCoins(new Vector3(transform.position.x + 1f, transform.position.y + 4f, transform.position.z));
+                theCoinGenerator.SpawnCoins(new Vector3(transform.position.x, transform.position.y + 5f, transform.position.z));
             }
 
             transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector] / 2), transform.position.y, transform.position.z);
