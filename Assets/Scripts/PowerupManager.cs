@@ -11,7 +11,7 @@ public class PowerupManager : MonoBehaviour {
     private PlatformGenerator thePlatformGenerator;
     private float normalPointsPerSecond;
     private float spikeRate;
-
+    private PlatformDestroyer[] spikeList;
     // Start is called before the first frame update
     void Start() {
         theScoreManager = FindObjectOfType<ScoreManager>();
@@ -37,15 +37,21 @@ public class PowerupManager : MonoBehaviour {
             }
         }
     }
-    public void ActivatePowerup() {
-        
-    }
+    
     public void ActivatePowerup(bool points, bool safe, float time) {
         doublePoints = points;
         safeMode = safe;
         powerupLengthCounter = time;
         normalPointsPerSecond = theScoreManager.pointsPerSecond;
         spikeRate = thePlatformGenerator.randomSpikeThreshold;
+        if (safeMode) {
+            spikeList = FindObjectsOfType<PlatformDestroyer>();
+            for(int i = 0;i < spikeList.Length; i++) {
+                if (spikeList[i].gameObject.name.Contains("spikes")) {
+                     spikeList[i].gameObject.SetActive(false);
+                }
+            }
+        }
         powerupActive = true;
     }
 }

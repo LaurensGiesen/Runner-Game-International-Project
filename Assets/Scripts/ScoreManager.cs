@@ -3,19 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreManager : MonoBehaviour
-{
-
+public class ScoreManager : MonoBehaviour {
     public Text scoreText;
     public Text hiScoreText;
-
     public float scoreCount;
     public float hiScoreCount;
-
     public float pointsPerSecond;
-
     public bool scoreIncreasing;
-
     public bool shouldDouble;
     // Start is called before the first frame update
     void Start()

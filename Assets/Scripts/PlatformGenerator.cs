@@ -22,7 +22,9 @@ public class PlatformGenerator : MonoBehaviour {
     public float randomCoinThreshold;
     public float randomSpikeThreshold;
     public ObjectPooler spikePool;
-
+    public float powerupHeight;
+    public ObjectPooler powerupPool;
+    public float powerupThreshold;
     // Start is called before the first frame update
     void Start() {
        platformWidths = new float[theObjectPools.Length];
@@ -45,6 +47,11 @@ public class PlatformGenerator : MonoBehaviour {
             } else if (heightChange < minHeight) {
                 heightChange = minHeight;
             } 
+            if (Random.Range(0f, 100f) < powerupThreshold) {
+                GameObject newPowerup = powerupPool.GetPooledObject();
+                newPowerup.transform.position = transform.position + new Vector3(distanceBetween/2f, Random.Range(powerupHeight /2f, powerupHeight), 0f);
+                newPowerup.SetActive(true);
+            }
             transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector] / 2) + distanceBetween, heightChange, transform.position.z);
             GameObject newPlatform = theObjectPools[platformSelector].GetPooledObject(); 
             newPlatform.transform.position = transform.position;
