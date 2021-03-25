@@ -58,3 +58,4 @@ public class PlatformGenerator : MonoBehaviour {
             transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector] / 2), transform.position.y, transform.position.z);
         }
     }
+}
