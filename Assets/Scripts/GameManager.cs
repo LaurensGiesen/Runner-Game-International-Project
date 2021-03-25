@@ -6,8 +6,10 @@ public class GameManager : MonoBehaviour {
 
     public Transform platformGenerator;
     private Vector3 platformStartPoint;
+
     public PlayerController thePlayer;
     private Vector3 playerStartPoint;
+
     private PlatformDestroyer[] platformList;
 
     private ScoreManager theScoreManager;
@@ -25,18 +27,20 @@ public class GameManager : MonoBehaviour {
     }
 
     public void RestartGame() {
-        StartCoroutine ("RestartGameGo");
+        StartCoroutine ("RestartGameCo");
     }
 
     public IEnumerator RestartGameCo() {
 		theScoreManager.scoreIncreasing = false;
 
         thePlayer.gameObject.SetActive(false);
+        
         yield return new WaitForSeconds(0.5f);
         platformList = FindObjectsOfType<PlatformDestroyer>();
         for(int i = 0;i < platformList.Length; i++) {
             platformList[i].gameObject.SetActive(false);
         }
+
         thePlayer.transform.position = playerStartPoint;
         platformGenerator.position = platformStartPoint;
         thePlayer.gameObject.SetActive(true);
