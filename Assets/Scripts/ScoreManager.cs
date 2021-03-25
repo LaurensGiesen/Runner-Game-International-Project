@@ -16,7 +16,7 @@ public class ScoreManager : MonoBehaviour
 
     public bool scoreIncreasing;
 
-
+    public bool shouldDouble;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,29 +26,22 @@ public class ScoreManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update() {
         if (scoreIncreasing) {
             scoreCount += pointsPerSecond * Time.deltaTime;
         }
-
-        
-
-
         if (scoreCount > hiScoreCount){
             hiScoreCount = scoreCount;
             PlayerPrefs.SetFloat("HighScore", hiScoreCount);
         }
-
-
         scoreText.text = "Score: " + Mathf.Round (scoreCount);
         hiScoreText.text = "High Score: " + Mathf.Round (hiScoreCount);
-
-
     }
 
     public void AddScore(int pointsToAdd) {
+        if (shouldDouble) {
+            pointsToAdd = pointsToAdd * 2;
+        }
         scoreCount += pointsToAdd;
     }
 }
