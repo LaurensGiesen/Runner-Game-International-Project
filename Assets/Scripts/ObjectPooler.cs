@@ -5,18 +5,12 @@ using UnityEngine;
 public class ObjectPooler : MonoBehaviour {
 
     public GameObject pooledObject;
-
     public int pooledAmount;
-
     List<GameObject> pooledObjects;
-
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         pooledObjects = new List<GameObject>();
-
-        for(int i = 0; i < pooledAmount; i++)
-        {
+        for(int i = 0; i < pooledAmount; i++) {
             GameObject obj = (GameObject) Instantiate(pooledObject);
             obj.SetActive(false);
             pooledObjects.Add(obj);
@@ -24,15 +18,11 @@ public class ObjectPooler : MonoBehaviour {
     }
 
     public GameObject GetPooledObject() {
-
         for(int i = 0; i < pooledObjects.Count; i++) {
-            
             if(!pooledObjects[i].activeInHierarchy) {
-                
                 return pooledObjects[i];
             }
         }
-
         GameObject obj = (GameObject)Instantiate(pooledObject);
         obj.SetActive(false);
         pooledObjects.Add(obj);
