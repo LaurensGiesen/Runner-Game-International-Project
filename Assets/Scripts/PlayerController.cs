@@ -13,9 +13,14 @@ public class PlayerController : MonoBehaviour {
     public float jumpForce;
     public float jumpTime;
     private float jumpTimeCounter;
+
+    private bool stoppedJumping;
+    private bool canDoubleJump;
+
     private float speedMilestoneCount;
     private Rigidbody2D myRigidbody;
     public bool grounded; 
+
     public LayerMask whatIsGround; 
     public Transform groundCheck;
     public float groundCheckRadius;
@@ -30,6 +35,8 @@ public class PlayerController : MonoBehaviour {
         moveSpeedStore = moveSpeed;
         speedMilestoneCountStore = speedMilestoneCount;
         speedIncreaseMilestoneStore = speedIncreaseMilestone;
+
+        stoppedJumping = true;
     }
     // Update is called once per frame
     void Update() {
@@ -47,10 +54,19 @@ public class PlayerController : MonoBehaviour {
             if(grounded)
             {
                 myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpForce);
+                stoppedJumping = false;
             }
+
+            if(!grounded && canDoubleJump) {
+                myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpForce);
+                jumpTimeCounter = jumpTime;
+                stoppedJumping = false;
+                canDoubleJump = false;
+            }
+
         }  
 
-        if (Input.GetKey (KeyCode.Space) || Input.GetMouseButton(0)) {
+        if ((Input.GetKey (KeyCode.Space) || Input.GetMouseButton(0)) && !stoppedJumping) {
             if(jumpTimeCounter > 0) {
                 myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpForce);
                 jumpTimeCounter -= Time.deltaTime;
@@ -59,10 +75,12 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetKeyUp (KeyCode.Space) || Input.GetMouseButtonUp(0)) {
             jumpTimeCounter = 0;
+            stoppedJumping = true;
         }
 
         if (grounded) {
             jumpTimeCounter = jumpTime;
+            canDoubleJump = true;
         }
         myAnimator.SetFloat("Speed", myRigidbody.velocity.x);
         myAnimator.SetBool("Grounded", grounded);
