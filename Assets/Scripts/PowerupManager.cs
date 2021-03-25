@@ -9,6 +9,7 @@ public class PowerupManager : MonoBehaviour {
     private float powerupLengthCounter;
     private ScoreManager theScoreManager;
     private PlatformGenerator thePlatformGenerator;
+    private GameManager theGameManager;
     private float normalPointsPerSecond;
     private float spikeRate;
     private PlatformDestroyer[] spikeList;
@@ -16,18 +17,23 @@ public class PowerupManager : MonoBehaviour {
     void Start() {
         theScoreManager = FindObjectOfType<ScoreManager>();
         thePlatformGenerator = FindObjectOfType<PlatformGenerator>();
+        theGameManager = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
     void Update() {
         if (powerupActive) {
             powerupLengthCounter -= Time.deltaTime;
+            if (theGameManager.powerupReset) {
+                powerupLengthCounter = 0;
+                theGameManager.powerupReset = false;
+            }
             if (doublePoints) {
                 theScoreManager.pointsPerSecond = normalPointsPerSecond * 2.75f;
                 theScoreManager.shouldDouble = true;
             }
             if (safeMode) {
-                thePlatformGenerator.randomSpikeThreshold = 0;
+                thePlatformGenerator.randomSpikeThreshold = 0f;
             }
             if (powerupLengthCounter <= 0) {
                 theScoreManager.pointsPerSecond = normalPointsPerSecond;

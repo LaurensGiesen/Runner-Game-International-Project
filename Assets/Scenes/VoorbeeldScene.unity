@@ -4197,12 +4197,12 @@ MonoBehaviour:
   - {fileID: 227461329}
   - {fileID: 73596416}
   maxHeightPoint: {fileID: 1525480662}
-  maxHeightChange: 6
+  maxHeightChange: 10
   theCoinGenerator: {fileID: 0}
   randomCoinThreshold: 75
-  randomSpikeThreshold: 15
+  randomSpikeThreshold: 100
   spikePool: {fileID: 188020828}
-  powerupHeight: 4
+  powerupHeight: 3
   powerupPool: {fileID: 549302825}
   powerupThreshold: 100
 --- !u!4 &1744316418

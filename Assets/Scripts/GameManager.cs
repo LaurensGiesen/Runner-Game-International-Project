@@ -9,16 +9,14 @@ public class GameManager : MonoBehaviour {
     public PlayerController thePlayer;
     private Vector3 playerStartPoint;
     private PlatformDestroyer[] platformList;
-
     private ScoreManager theScoreManager;
-
     public DeathMenu theDeathScreen;
+    public bool powerupReset;
 
     // Start is called before the first frame update
     void Start() {
         platformStartPoint = platformGenerator.position;
         playerStartPoint = thePlayer.transform.position;
-    
 		theScoreManager = FindObjectOfType<ScoreManager>();    
     }
 
@@ -30,7 +28,6 @@ public class GameManager : MonoBehaviour {
     public void RestartGame() {
         theScoreManager.scoreIncreasing = false;
         thePlayer.gameObject.SetActive(false);
-
         theDeathScreen.gameObject.SetActive(true);
     }
 
@@ -43,8 +40,8 @@ public class GameManager : MonoBehaviour {
         thePlayer.transform.position = playerStartPoint;
         platformGenerator.position = platformStartPoint;
         thePlayer.gameObject.SetActive(true);
-
 		theScoreManager.scoreCount = 0;
 		theScoreManager.scoreIncreasing = true;
+        powerupReset = true;
     }
 }
