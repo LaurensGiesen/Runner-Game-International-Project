@@ -5,9 +5,10 @@ using UnityEngine;
 public class DeathMenu : MonoBehaviour
 {
     public string mainMenuLevel;
+    public string PlayGameLevel;
 
     public void RestartGame() {
-        FindObjectOfType<GameManager>().Reset();
+        Application.LoadLevel(PlayGameLevel);
     }
 
     public void QuitToMain() {

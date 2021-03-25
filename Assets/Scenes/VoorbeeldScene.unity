@@ -2397,7 +2397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformGenerator: {fileID: 1744316418}
   thePlayer: {fileID: 1260896016}
-  theDeathScreen: {fileID: 0}
+  theDeathScreen: {fileID: 1756914265}
 --- !u!4 &1546359080
 Transform:
   m_ObjectHideFlags: 0
@@ -2921,6 +2921,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuLevel: Main Menu
+  PlayGameLevel: VoorbeeldScene
 --- !u!1 &2023602661
 GameObject:
   m_ObjectHideFlags: 0
