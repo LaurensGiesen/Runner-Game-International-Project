@@ -26,6 +26,10 @@ public class PlatformGenerator : MonoBehaviour {
 
     public CoinGenerator theCoinGenerator;
     public float randomCoinThreshold;
+
+    public float randomSpikeThreshold;
+    public ObjectPooler spikePool;
+
     // Start is called before the first frame update
     void Start() {
        platformWidths = new float[theObjectPools.Length];
@@ -58,6 +62,18 @@ public class PlatformGenerator : MonoBehaviour {
 
             if(Random.Range(0f, 100f) < randomCoinThreshold) {
                 theCoinGenerator.SpawnCoins(new Vector3(transform.position.x, transform.position.y + 5f, transform.position.z));
+            }
+
+            if(Random.Range(0f, 100f) < randomSpikeThreshold) {
+                GameObject newSpike = spikePool.GetPooledObject();
+
+                float spikeXPosition = Random.Range(-platformWidths[platformSelector] / 2f + 1f, platformWidths[platformSelector] / 2f -1f);
+
+                Vector3 spikePosition = new Vector3(spikeXPosition, 3.3f, 0f);
+
+                newSpike.transform.position = transform.position + spikePosition;
+                newSpike.transform.rotation = transform.rotation;
+                newSpike.SetActive(true);
             }
 
             transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector] / 2), transform.position.y, transform.position.z);
