@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 2659753220090515867}
   - component: {fileID: 2659753220090515868}
   m_Layer: 8
-  m_Name: Platform 3 x 1
+  m_Name: Platform 1 x 1
   m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
