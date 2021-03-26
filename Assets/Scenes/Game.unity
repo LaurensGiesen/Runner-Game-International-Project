@@ -1062,7 +1062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuLevel: Main Menu
-  PlayGameLevel: VoorbeeldScene
+  PlayGameLevel: Game
 --- !u!114 &316430270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1076,8 +1076,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuLevel: Main Menu
-  PlayGameLevel: VoorbeeldScene
+  PlayGameLevel: Game
   pauseMenu: {fileID: 0}
+  deathMenuActive: 0
 --- !u!1 &349045196
 GameObject:
   m_ObjectHideFlags: 0
@@ -1276,8 +1277,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 170, y: -60}
-  m_SizeDelta: {x: 260.4535, y: 30}
+  m_AnchoredPosition: {x: 219.90994, y: -60}
+  m_SizeDelta: {x: 360.2734, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &549302824
 GameObject:
@@ -1873,8 +1874,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -180, y: -60}
-  m_SizeDelta: {x: 260.4535, y: 30}
+  m_AnchoredPosition: {x: -257.58728, y: -60}
+  m_SizeDelta: {x: 415.6281, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1059782353
 GameObject:
@@ -3050,8 +3051,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuLevel: Main Menu
-  PlayGameLevel: VoorbeeldScene
+  PlayGameLevel: Game
   pauseMenu: {fileID: 316430267}
+  deathMenuActive: 0
 --- !u!114 &1614729381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3668,12 +3670,12 @@ MonoBehaviour:
   maxHeightPoint: {fileID: 1525480662}
   maxHeightChange: 7
   theCoinGenerator: {fileID: 0}
-  randomCoinThreshold: 60
-  randomSpikeThreshold: 60
+  randomCoinThreshold: 55
+  randomSpikeThreshold: 45
   spikePool: {fileID: 188020828}
   powerupHeight: 5.5
   powerupPool: {fileID: 549302825}
-  powerupThreshold: 30
+  powerupThreshold: 20
 --- !u!4 &1744316418
 Transform:
   m_ObjectHideFlags: 0
@@ -3788,7 +3790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuLevel: Main Menu
-  PlayGameLevel: VoorbeeldScene
+  PlayGameLevel: Game
 --- !u!1 &1775856653
 GameObject:
   m_ObjectHideFlags: 0

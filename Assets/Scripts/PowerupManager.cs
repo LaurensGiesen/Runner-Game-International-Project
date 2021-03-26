@@ -11,6 +11,7 @@ public class PowerupManager : MonoBehaviour {
     private PlatformGenerator thePlatformGenerator;
     private GameManager theGameManager;
     private float normalPointsPerSecond;
+    private bool upgradedPoints;
     private float spikeRate;
     private PlatformDestroyer[] spikeList;
     // Start is called before the first frame update
@@ -29,17 +30,21 @@ public class PowerupManager : MonoBehaviour {
                 theGameManager.powerupReset = false;
             }
             if (doublePoints) {
-                theScoreManager.pointsPerSecond = normalPointsPerSecond * 2.75f;
+                if (upgradedPoints == false) {
+                    theScoreManager.pointsPerSecond = theScoreManager.pointsPerSecond * 2.75f;
+                }
+                upgradedPoints = true;
                 theScoreManager.shouldDouble = true;
             }
             if (safeMode) {
                 thePlatformGenerator.randomSpikeThreshold = 0f;
             }
             if (powerupLengthCounter <= 0) {
-                theScoreManager.pointsPerSecond = normalPointsPerSecond;
+                theScoreManager.pointsPerSecond = theScoreManager.pointsPerSecond / 2.75f;
                 theScoreManager.shouldDouble = false;
                 thePlatformGenerator.randomSpikeThreshold = spikeRate;
                 powerupActive = false;
+                upgradedPoints = false;
             }
         }
     }
@@ -48,7 +53,7 @@ public class PowerupManager : MonoBehaviour {
         doublePoints = points;
         safeMode = safe;
         powerupLengthCounter = time;
-        normalPointsPerSecond = theScoreManager.pointsPerSecond;
+        
         spikeRate = thePlatformGenerator.randomSpikeThreshold;
         if (safeMode) {
             spikeList = FindObjectsOfType<PlatformDestroyer>();

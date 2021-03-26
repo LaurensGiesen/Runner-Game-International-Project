@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour {
 
         myRigidbody.velocity = new Vector2(moveSpeed, myRigidbody.velocity.y);
 
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) 
+        if (Input.GetKeyDown(KeyCode.Space)) 
         {
             if(grounded)
             {
@@ -78,14 +78,14 @@ public class PlayerController : MonoBehaviour {
 
         }  
 
-        if ((Input.GetKey (KeyCode.Space) || Input.GetMouseButton(0)) && !stoppedJumping) {
+        if (Input.GetKey (KeyCode.Space) && !stoppedJumping) {
             if(jumpTimeCounter > 0) {
                 myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpForce);
                 jumpTimeCounter -= Time.deltaTime;
             }
         }
 
-        if (Input.GetKeyUp (KeyCode.Space) || Input.GetMouseButtonUp(0)) {
+        if (Input.GetKeyUp (KeyCode.Space)) {
             jumpTimeCounter = 0;
             stoppedJumping = true;
         }

@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour {
     private Vector3 playerStartPoint;
     private PlatformDestroyer[] platformList;
     private ScoreManager theScoreManager;
+    private PauseMenu thePauseMenu;
     public DeathMenu theDeathScreen;
     public bool powerupReset;
 
@@ -17,7 +18,8 @@ public class GameManager : MonoBehaviour {
     void Start() {
         platformStartPoint = platformGenerator.position;
         playerStartPoint = thePlayer.transform.position;
-		theScoreManager = FindObjectOfType<ScoreManager>();    
+		theScoreManager = FindObjectOfType<ScoreManager>();
+        thePauseMenu = FindObjectOfType<PauseMenu>(); 
     }
 
     // Update is called once per frame
@@ -29,6 +31,7 @@ public class GameManager : MonoBehaviour {
         theScoreManager.scoreIncreasing = false;
         thePlayer.gameObject.SetActive(false);
         theDeathScreen.gameObject.SetActive(true);
+        thePauseMenu.deathMenuActive = true;
     }
 
     public void Reset() {
