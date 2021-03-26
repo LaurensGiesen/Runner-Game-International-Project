@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dc259b97d0e1b8949ba7fd83107f4d6a
+guid: a96abeac756385345a14258bd1dd0090
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -32,12 +32,12 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -46,12 +46,12 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: 0
+  spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -65,9 +65,9 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 32
+    maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -77,9 +77,9 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 32
+    maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -90,47 +90,7 @@ TextureImporter:
   spriteSheet:
     serializedVersion: 2
     sprites: []
-    outline:
-    - - {x: 8, y: -4}
-      - {x: 8, y: -5}
-      - {x: 7, y: -5}
-      - {x: 7, y: -6}
-      - {x: 6, y: -6}
-      - {x: 6, y: -7}
-      - {x: 5, y: -7}
-      - {x: 5, y: -10}
-      - {x: 4, y: -10}
-      - {x: 4, y: -9}
-      - {x: 2, y: -9}
-      - {x: 2, y: -7}
-      - {x: -9, y: -7}
-      - {x: -9, y: -6}
-      - {x: -10, y: -6}
-      - {x: -10, y: -5}
-      - {x: -11, y: -5}
-      - {x: -11, y: -4}
-      - {x: -12, y: -4}
-      - {x: -12, y: 3}
-      - {x: -11, y: 3}
-      - {x: -11, y: 4}
-      - {x: -10, y: 4}
-      - {x: -10, y: 5}
-      - {x: -8, y: 5}
-      - {x: -8, y: 6}
-      - {x: -7, y: 6}
-      - {x: -7, y: 7}
-      - {x: 2, y: 7}
-      - {x: 2, y: 6}
-      - {x: 5, y: 6}
-      - {x: 5, y: 5}
-      - {x: 6, y: 5}
-      - {x: 6, y: 4}
-      - {x: 7, y: 4}
-      - {x: 7, y: 3}
-      - {x: 8, y: 3}
-      - {x: 8, y: 1}
-      - {x: 9, y: 1}
-      - {x: 9, y: -4}
+    outline: []
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
