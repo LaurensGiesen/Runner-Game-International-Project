@@ -7,10 +7,14 @@ public class PauseMenu : MonoBehaviour
     public string mainMenuLevel;
     public string PlayGameLevel;
     public GameObject pauseMenu;
+    public bool deathMenuActive = false;
 
     public void PauseGame() {
-        Time.timeScale = 0f;
+        if (deathMenuActive == false) {
+            Time.timeScale = 0f;
         pauseMenu.SetActive(true);
+        }
+        
     }
 
     public void ResumeGame() {

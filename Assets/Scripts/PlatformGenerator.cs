@@ -61,14 +61,12 @@ public class PlatformGenerator : MonoBehaviour {
                 theCoinGenerator.SpawnCoins(new Vector3(transform.position.x, transform.position.y + 2f, transform.position.z));
             }
             if((Random.Range(0f, 100f) < randomSpikeThreshold) && (platformWidths[platformSelector] > 5f)) {
-            //    if (platformWidths[platformSelector] > 5f) {
                 GameObject newSpike = spikePool.GetPooledObject();
                 float spikeXPosition = Random.Range(-platformWidths[platformSelector] / 2f + 1f, platformWidths[platformSelector] / 2f -1f);
                 Vector3 spikePosition = new Vector3(spikeXPosition, 0.75f, 0f);
                 newSpike.transform.position = transform.position + spikePosition;
                 newSpike.transform.rotation = transform.rotation;
                 newSpike.SetActive(true);
-          //      }
             }
             transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector] / 2), transform.position.y, transform.position.z);
         }
