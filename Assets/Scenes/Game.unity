@@ -692,7 +692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af2288a72c08fcc48a828531d3470076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObject: {fileID: 9198524519656989650, guid: f02f20167a445694683c9628d959ecfe,
+  pooledObject: {fileID: 7798879037591685203, guid: 2a15a0c8377e9074b8abae38224d50eb,
     type: 3}
   pooledAmount: 5
 --- !u!4 &188020829
@@ -3680,7 +3680,7 @@ MonoBehaviour:
   spikePool: {fileID: 188020828}
   powerupHeight: 5.5
   powerupPool: {fileID: 549302825}
-  powerupThreshold: 20
+  powerupThreshold: 40
 --- !u!4 &1744316418
 Transform:
   m_ObjectHideFlags: 0

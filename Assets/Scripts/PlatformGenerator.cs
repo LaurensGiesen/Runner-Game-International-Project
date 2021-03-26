@@ -63,7 +63,7 @@ public class PlatformGenerator : MonoBehaviour {
             if((Random.Range(0f, 100f) < randomSpikeThreshold) && (platformWidths[platformSelector] > 5f)) {
                 GameObject newSpike = spikePool.GetPooledObject();
                 float spikeXPosition = Random.Range(-platformWidths[platformSelector] / 2f + 1f, platformWidths[platformSelector] / 2f -1f);
-                Vector3 spikePosition = new Vector3(spikeXPosition, 0.75f, 0f);
+                Vector3 spikePosition = new Vector3(spikeXPosition, 1.45f, 0f);
                 newSpike.transform.position = transform.position + spikePosition;
                 newSpike.transform.rotation = transform.rotation;
                 newSpike.SetActive(true);
