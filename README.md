@@ -1,0 +1,1 @@
+As a replacement project for my International project which was supposed to be in Sweden but was cancelled due to covid-19, we made a free-runner game using Unity. An exciting project where we learned the basics of the C# language.
